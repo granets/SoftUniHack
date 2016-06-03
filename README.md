@@ -25,3 +25,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## Installation
+
+1. To run this on your system, clone the repository, or download the .zip file.
+2. From the root, open a Command Prompt/Terminal window and execute the command `php artisan key:generate`.
+3. Copy the created key (format should be [base64:<randomString>]). Copy everything in [].
+4. Locate the .env.example file in the root. On the line that looks like this: `APP_KEY=SomeRandomString`,
+ paste the generated key. It should look like this: `APP_KEY=base64:<randomString>`.
+5. Save file as .env.
+6. If everything is done properly, when you run `php artisan serve` from the root, you should get a message that the
+built-in Laravel web server has started at 'http://localhost:8000'.
