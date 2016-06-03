@@ -10,7 +10,7 @@ class Battery{
 	public function __construct($n = "Li 5", $t = "Lithium battery",
 			$e = 8, $p = 100){
 		$this->battery_name = $n;
-		$this->battery_type = $t;
+		$this->battery_type = $t; //some comment
 		$this->battery_endurance = $e;
 		$this->battery_power = $p;
 	}
