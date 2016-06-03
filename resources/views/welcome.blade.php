@@ -62,6 +62,9 @@
                 <li class="page-scroll">
                     <a href="#contact">Contact</a>
                 </li>
+                <li class="page-scroll">
+                    <a href="/pages">Admin</a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
