@@ -1,7 +1,6 @@
 <?php
     echo "this is just a test file! <br>";
     echo "more text!!!";
-
     echo "Emo text!";
     public function charge_battery($time){
 		echo "chargin battery...<br/>";
@@ -12,3 +11,5 @@
 		}
 		echo "end endurance = $this->battery_power";
 	}
+
+echo "something";
