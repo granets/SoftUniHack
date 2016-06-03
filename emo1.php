@@ -1,6 +1,7 @@
 <?php
 class Battery{
 	//Add comment to see if it can broke much code
+	//New test 2
 	public $battery_name;
 	public $battery_type;
 	public $battery_endurance;
