@@ -17,11 +17,18 @@ class CreateCmLevels extends Migration
             $table->unsignedInteger('level_number');
             $table->string('level_name');
             $table->timestamp('date_created');
-            $table->unsignedInteger('created_by')->index();
-            $table->timestamp('date_updated');
-            $table->unsignedInteger('updated_by')->index();
-            $table->timestamp('date_deleted');
-            $table->unsignedInteger('deleted_by')->index();
+            $table->unsignedInteger('created_by');
+            $table->timestamp('date_updated')->nullable();
+            $table->unsignedInteger('updated_by')->nullable();
+            $table->timestamp('date_deleted')->nullable();
+            $table->unsignedInteger('deleted_by')->nullable();
+
+            $table->index('created_by');
+            //$table->foreign('created_by')->references('id')->on('users');
+            $table->index('updated_by');
+            //$table->foreign('updated_by')->references('id')->on('users');
+            $table->index('deleted_by');
+            //$table->foreign('deleted_by')->references('id')->on('users');
         });
     }
 

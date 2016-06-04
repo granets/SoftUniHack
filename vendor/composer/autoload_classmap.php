@@ -19,6 +19,7 @@ return array(
     'CreateCmMissions' => $baseDir . '/database/migrations/2016_06_04_093719_create_cm_missions.php',
     'CreateCmMonsters' => $baseDir . '/database/migrations/2016_06_04_094451_create_cm_monsters.php',
     'CreateConAccountsMonsters' => $baseDir . '/database/migrations/2016_06_04_100057_create_con_accounts_monsters.php',
+    'CreateConLevelMissions' => $baseDir . '/database/migrations/2016_06_04_133231_create_con_level_missions.php',
     'CreateConMonstersLevels' => $baseDir . '/database/migrations/2016_06_04_100124_create_con_monsters_levels.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',

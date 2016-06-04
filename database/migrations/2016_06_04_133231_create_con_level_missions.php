@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClMonsterPictures extends Migration
+class CreateConLevelMissions extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,15 @@ class CreateClMonsterPictures extends Migration
      */
     public function up()
     {
-        Schema::create('cl_monster_pictures', function (Blueprint $table) {
+        Schema::create('con_level_missions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('picture');
+            $table->unsignedInteger('mission_id')->index();
+            $table->unsignedInteger('level_id')->index();
             $table->unsignedInteger('deleted_by')->nullable();
             $table->timestamp('date_deleted')->nullable();
+
+            $table->index('deleted_by');
+            //$table->foreign('deleted_by')->references('id')->on('users');
         });
     }
 
@@ -27,6 +31,6 @@ class CreateClMonsterPictures extends Migration
      */
     public function down()
     {
-        Schema::drop('cl_monster_pictures');
+        Schema::drop('con_level_missions');
     }
 }
