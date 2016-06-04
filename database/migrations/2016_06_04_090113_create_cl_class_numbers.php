@@ -15,8 +15,11 @@ class CreateClClassNumbers extends Migration
         Schema::create('cl_class_numbers', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('class_number')->index();
-            $table->unsignedInteger('deleted_by')->index();
-            $table->timestamp('date_deleted');
+            $table->unsignedInteger('deleted_by')->nullable();
+            $table->timestamp('date_deleted')->nullable();
+
+            $table->index('deleted_by');
+            //$table->foreign('deleted_by')->references('id')->on('users');
         });
     }
 

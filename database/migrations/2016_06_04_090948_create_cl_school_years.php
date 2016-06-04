@@ -17,8 +17,11 @@ class CreateClSchoolYears extends Migration
             $table->unsignedInteger('start_year');
             $table->unsignedInteger('end_year');
             $table->string('school_year');
-            $table->unsignedInteger('deleted_by')->index();
-            $table->timestamp('date_deleted');
+            $table->unsignedInteger('deleted_by')->nullable();
+            $table->timestamp('date_deleted')->nullable();
+
+            $table->index('deleted_by');
+            //$table->foreign('deleted_by')->references('id')->on('users');
         });
     }
 

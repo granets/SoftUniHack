@@ -16,8 +16,11 @@ class CreateConAccountsMonsters extends Migration
             $table->increments('id');
             $table->unsignedInteger('account_id')->index();
             $table->unsignedInteger('monster_id')->index();
-            $table->unsignedInteger('deleted_by')->index();
-            $table->timestamp('date_deleted');
+            $table->unsignedInteger('deleted_by')->nullable();
+            $table->timestamp('date_deleted')->nullable();
+
+            $table->index('deleted_by');
+            //$table->foreign('deleted_by')->references('id')->on('users');
         });
     }
 

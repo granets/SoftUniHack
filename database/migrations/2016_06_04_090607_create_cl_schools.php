@@ -16,8 +16,11 @@ class CreateClSchools extends Migration
             $table->increments('id');
             $table->string('school_name');
             $table->string('school_address');
-            $table->unsignedInteger('deleted_by')->index();
-            $table->timestamp('date_deleted');
+            $table->unsignedInteger('deleted_by')->nullable();
+            $table->timestamp('date_deleted')->nullable();
+
+            $table->index('deleted_by');
+            //$table->foreign('deleted_by')->references('id')->on('users');
         });
     }
 
