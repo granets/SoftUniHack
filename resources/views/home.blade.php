@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
+                    <img class="img-responsive" src="{{ asset('img/profile.png') }}" alt="">
                     <div class="intro-text">
                         <span class="name">Чудовища на Успеха</span>
                         <hr class="star-light">
