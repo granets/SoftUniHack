@@ -59,7 +59,7 @@
                     <a href="#about">Виж Чудовище</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#contact">Вход</a>
+                    <a href="/admin">Вход</a>
                 </li>
             </ul>
         </div>
