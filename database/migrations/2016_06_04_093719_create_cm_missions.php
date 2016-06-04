@@ -16,16 +16,16 @@ class CreateCmMissions extends Migration
             $table->increments('id');
             $table->string('mission');
             $table->unsignedInteger('points');
-            $table->timestamp('date_created');
+            $table->timestamp('created_at');
             $table->unsignedInteger('created_by');
-            $table->timestamp('date_updated')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamp('date_deleted')->nullable();
             $table->unsignedInteger('deleted_by')->nullable();
 
-            $table->index('created_by');
+            $table->index('created_at');
             //$table->foreign('created_by')->references('id')->on('users');
-            $table->index('updated_by');
+            $table->index('updated_at');
             //$table->foreign('updated_by')->references('id')->on('users');
             $table->index('deleted_by');
             //$table->foreign('deleted_by')->references('id')->on('users');

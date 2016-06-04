@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\CmMission;
+use App\Http\Controllers\Controller;
+
+class MissionController extends Controller {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+
+
+    public function show_form()
+    {
+        return view('mission.add_form');
+    }
+
+    public function submit_form(Request $request)
+    {
+        $this->validate($request, [
+            'mission' => 'required|min:10',
+            'points' => 'required'
+        ]);
+
+        $mission = new CmMission;
+        $mission->mission = $request->mission;
+        $mission->points = $request->points;
+
+        $mission->save();
+
+        return redirect('/mission');
+    }
+}
