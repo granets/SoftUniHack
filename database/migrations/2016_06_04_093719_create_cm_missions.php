@@ -16,6 +16,7 @@ class CreateCmMissions extends Migration
             $table->increments('id');
             $table->string('mission');
             $table->unsignedInteger('points');
+            $table->unsignedInteger('min_level');
             $table->timestamp('created_at');
             $table->unsignedInteger('created_by');
             $table->timestamp('updated_at')->nullable();

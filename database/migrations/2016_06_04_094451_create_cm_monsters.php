@@ -20,6 +20,8 @@ class CreateCmMonsters extends Migration
             $table->unsignedInteger('picture_id');
             $table->string('picture');
             $table->string('code');
+            $table->string('class');
+            $table->string('subject');
             $table->timestamp('created_at');
             $table->unsignedInteger('created_by');
             $table->timestamp('updated_at')->nullable();

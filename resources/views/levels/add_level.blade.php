@@ -12,18 +12,14 @@
         </div>
         <div class="form-group input-group">
         <span class="input-group-btn">
-            <button class="btn btn-primary" name="levelenter" type="submit" style="position:relative; top:190px;"><i>Добави ниво</i>
+            <button class="btn btn-primary" name="levelenter" type="submit" style="border-radius: 3px; position:relative; top:190px;">Добави ниво
             </button>
         </span>
         </div>
     </form>
 
     @if (count($levels) > 0)
-        <div  style="position:relative; top:100px;">
-            <div style="position:relative; top:100px; text-align:center; font-weight:bold; font-size:2em;">
-                <p class="col-md-6 col-md-push-3">Зададени мисии:</p>
-            </div>
-
+        <div>
             <div class="panel-body col-md-9 col-md-push-3">
                 <table class="table table-striped table-bordered table-hover">
                     <div class="container-fluid">

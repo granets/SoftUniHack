@@ -48,7 +48,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#">
+                    <a href="{{url('/level')}}">
                         <div class="panel-footer">
                             <span class="pull-left">Виж Повече</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
