@@ -29,8 +29,6 @@ class MissionController extends Controller {
             'missions' => $missions
         ]);
 
-
-
     }
 
     public function submit_form(Request $request)
@@ -56,4 +54,5 @@ class MissionController extends Controller {
 
         return redirect('/mission');
     }
+
 }

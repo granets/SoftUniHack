@@ -14,8 +14,8 @@ class CreateCmLevels extends Migration
     {
         Schema::create('cm_levels', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('level_number');
-            $table->string('level_name');
+            $table->unsignedInteger('number');
+            $table->string('levels');
             $table->timestamp('created_at');
             $table->unsignedInteger('created_by');
             $table->timestamp('updated_at')->nullable();

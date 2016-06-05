@@ -28,6 +28,12 @@ Route::delete('mission/{mission}', 'MissionController@delete_data');
 
 Route::post('/mission', 'MissionController@submit_form');
 
+Route::get('/level', 'LevelController@show_form');
+
+Route::delete('level/{level}', 'LevelController@delete_data');
+
+Route::post('/level', 'LevelController@submit_form');
+
 Route::auth();
 
 Route::get('/awarding', 'CmAwardingController@show_form');
