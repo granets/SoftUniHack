@@ -11,8 +11,19 @@
 |
 */
 
+
+use Illuminate\Http\Request;
+
+Route::get('/', 'HomeController@index');
+
+Route::get('home', 'HomeController@index');
+
 Route::get('/home', 'HomeController@index');
 
 Route::get('/admin', 'AdminController@index');
+
+Route::get('/mission', 'MissionController@show_form');
+
+Route::post('/mission', 'MissionController@submit_form');
 
 Route::auth();

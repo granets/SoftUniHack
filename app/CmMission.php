@@ -11,6 +11,9 @@ class CmMission extends Model
      *
      * @var array
     */
+
+
+
     protected $fillable = ['mission', 'points'];
 
     public function user()
@@ -23,3 +26,4 @@ class CmMission extends Model
         return $this->hasMany(CmAwarding::class);
     }
 }
+

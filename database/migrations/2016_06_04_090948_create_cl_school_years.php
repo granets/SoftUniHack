@@ -17,6 +17,8 @@ class CreateClSchoolYears extends Migration
             $table->unsignedInteger('start_year');
             $table->unsignedInteger('end_year');
             $table->string('school_year');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at')->nullable();
             $table->unsignedInteger('deleted_by')->nullable();
             $table->timestamp('date_deleted')->nullable();
 
