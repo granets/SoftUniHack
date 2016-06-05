@@ -21,7 +21,7 @@ class CreateCmMonsters extends Migration
             $table->string('code');
             $table->timestamp('created_at');
             $table->unsignedInteger('created_by');
-            $table->timestamp('updateded_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamp('date_deleted')->nullable();
             $table->unsignedInteger('deleted_by')->nullable();

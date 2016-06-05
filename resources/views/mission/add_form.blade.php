@@ -20,18 +20,19 @@
     </form>
 
     @if (count($missions) > 0)
-        <div class="panel panel-default" style="position:relative; top:150px;">
-            <div class="panel-heading">
-                Зададени мисии:
+        <div  style="position:relative; top:100px;">
+            <div style="position:relative; top:100px width:100%; text-align:center; font-weight:bold; font-size:2em;">
+                <p class="col-md-6 col-md-push-3">Зададени мисии:</p>
             </div>
 
-            <div class="panel-body" style="position:relative;">
-                <table class="table table-striped task-table" style="postion:absolute; top:20px;">
+            <div class="panel-body col-md-9 col-md-push-3" style="position:relative;">
+                <table class="table table-striped table-bordered table-hover">
 
                     <!-- Table Headings -->
                     <thead>
                     <th>Мисия</th>
                     <th>Точки</th>
+                    <th>Изтрий</th>
                     </thead>
 
                     <!-- Table Body -->
@@ -47,7 +48,15 @@
                             </td>
 
                             <td>
-                                <!-- TODO: Delete Button -->
+                                <form action="{{ url('mission/'.$mission->id) }}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+
+                                    <button type="submit" class="btn btn-danger" style="postion:relative; right:0;">
+                                        <i class="fa fa-trash"></i> Изтрий
+                                    </button>
+                                    <input type="hidden" name="_method" value="DELETE">
+                                </form>
                             </td>
                         </tr>
                     @endforeach
