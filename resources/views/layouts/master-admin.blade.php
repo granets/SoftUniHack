@@ -98,7 +98,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-paw fa-fw"></i> Чудовища</a>
+                        <a href="{{url('/monsters')}}"><i class="fa fa-paw fa-fw"></i> Чудовища</a>
                         <!-- /.nav-second-level -->
                     </li>
                 </ul>

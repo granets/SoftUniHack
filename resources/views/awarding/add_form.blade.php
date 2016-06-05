@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master-admin')
 
 @section('content')
 <div class="container">
@@ -38,23 +38,24 @@
                             @endif
 						@endforeach
                     </table>
-
+                        Общо: {{$total_points}}
                         <table class="table table-striped table-bordered table-hover">
-                        <tr>
-                            <th> Мисия</th>
-                            <th> Точки</th>
-                            <th> Коментар</th>
-                        </tr>
-                        @foreach($all_awardings as $awarding)
                             <tr>
-                                <td>{{$awarding->mission}} </td>
-                                <td>{{$awarding->day_achievement}} </td>
-                                <td>{{$awarding->achievement_comment}}</td>
+                                <th> Мисия</th>
+                                <th> Точки</th>
+                                <th> Коментар</th>
                             </tr>
-                        @endforeach
+                            @foreach($all_awardings as $awarding)
+                                <tr>
+                                    <td>{{$awarding->mission}} </td>
+                                    <td>{{$awarding->day_achievement}} </td>
+                                    <td>{{$awarding->achievement_comment}}</td>
+                                </tr>
+                            @endforeach
                         <table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
-
-                        
-
-                       
