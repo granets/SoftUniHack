@@ -27,3 +27,7 @@ Route::get('/mission', 'MissionController@show_form');
 Route::post('/mission', 'MissionController@submit_form');
 
 Route::auth();
+
+Route::get('/awarding', 'CmAwardingController@show_form');
+
+Route::post('/awarding', 'CmAwardingController@submit_form');
