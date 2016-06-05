@@ -12,13 +12,13 @@
     <title>Чудовища на Успеха</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
+    <link href="{{ asset('css/freelancer.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
           type="text/css">
@@ -58,9 +58,24 @@
                 <li class="page-scroll">
                     <a href="#about">Виж Чудовище</a>
                 </li>
-                <li class="page-scroll">
-                    <a href="/admin">Вход</a>
-                </li>
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    @if (Auth::guest())
+                        <li><a href="{{ url('/login') }}">Вход</a></li>
+                        <li><a href="{{ url('/register') }}">Регистрация</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Изход</a></li>
+                            </ul>
+                        </li>
+                    @endif
+                </ul>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -72,22 +87,22 @@
 @yield('content')
 <!-- Footer -->
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="{{ asset('js/jquery.js') }}"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 <!-- Plugin JavaScript -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="js/classie.js"></script>
-<script src="js/cbpAnimatedHeader.js"></script>
+<script src="{{ asset('js/classie.js') }}"></script>
+<script src="{{ asset('js/cbpAnimatedHeader.js') }}"></script>
 
 <!-- Contact Form JavaScript -->
-<script src="js/jqBootstrapValidation.js"></script>
-<script src="js/contact_me.js"></script>
+<script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>
+<script src="{{ asset('js/contact_me.js') }}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="js/freelancer.js"></script>
+<script src="{{ asset('js/freelancer.js') }}"></script>
 
 </body>
 

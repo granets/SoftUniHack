@@ -19,7 +19,11 @@ class MissionController extends Controller {
 
     public function show_form()
     {
-        return view('mission.add_form');
+        $missions = CmMission::orderBy('created_at', 'asc')->get();
+
+        return view('mission.add_form', [
+            'missions' => $missions
+        ]);
     }
 
     public function submit_form(Request $request)
@@ -39,13 +43,4 @@ class MissionController extends Controller {
 
         return redirect('/mission');
     }
-
-    public function view_data() {
-            $missions = CmMission::orderBy('created_at', 'asc')->get();
-
-            return view('mission.add_form', [
-                'missions' => $missions
-        ]);
-    }
-
 }
