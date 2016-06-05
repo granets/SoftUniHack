@@ -42,9 +42,9 @@ class CmAwardingController extends Controller
 	*/
 	public function show_form(Request $request, $id)
 	{
-	    $level_missions = CmMission::where('points', 100)->orderBy('points', 'asc')->get();
 	    $total_points = CmAwarding::where('monster_id', $id)->sum('day_achievement');
 	    $monster = CmMonster::where('id', $id)->first();
+	    $level_missions = CmMission::where('min_level', '<=', $monster->level)->orderBy('points', 'asc')->get();
 
 	    $awardings = CmAwarding::where('monster_id', $id)->get();
 
@@ -85,9 +85,24 @@ class CmAwardingController extends Controller
 	    // $total_points = CmAwarding::where('monster_id', 1)->sum('day_achievement');
 	    // $monster->total_points = $total_points;
 	    // $monster->save();
-
+	    $new_level = 1;
+	    $new_picture = 'monster0.jpg';
+	    if($total_points > 700)
+	    {
+	    	$new_level = 3;
+			$new_picture = 'monster2.jpg';
+	    }
+	    else if($total_points > 300)
+	    {
+	    	$new_level = 2;
+	    	$new_picture = 'monster1.jpg';
+	    }
 	    CmMonster::where('id', $monster_id)
-          ->update(['total_points' => $total_points]);
+          ->update([
+          	'total_points' => $total_points
+          	,'level' => $new_level
+          	,'picture' => $new_picture
+          	]);
 
 	    return redirect('/monsters');
 	}

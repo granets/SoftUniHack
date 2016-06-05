@@ -11,7 +11,7 @@ class CmMonster extends Model
      *
      * @var array
     */
-    protected $fillable = ['name', 'level', 'picture_id', 'picture', 'code'];
+    protected $fillable = ['name', 'level', 'picture_id', 'picture', 'code', 'class', 'subject'];
 
     public function user()
     {
