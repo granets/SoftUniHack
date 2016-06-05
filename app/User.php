@@ -24,6 +24,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function monsters()
+    {
+        return $this->hasMany(CmMonster::class);
+    }
+
     /**
      * Get all of the cl_class_letters for the user.
      */
