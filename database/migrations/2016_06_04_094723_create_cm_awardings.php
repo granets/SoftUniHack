@@ -18,9 +18,9 @@ class CreateCmAwardings extends Migration
             $table->unsignedInteger('mission_id');
             $table->unsignedInteger('day_achievement');
             $table->string('achievement_comment');
-            $table->timestamp('date_created');
+            $table->timestamp('created_at');
             $table->unsignedInteger('created_by');
-            $table->timestamp('date_updated')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamp('date_deleted')->nullable();
             $table->unsignedInteger('deleted_by')->nullable();

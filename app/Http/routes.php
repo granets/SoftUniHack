@@ -29,5 +29,7 @@ Route::get('/mission', 'MissionController@show_form');
 
 Route::post('/mission', 'MissionController@submit_form');
 
+Route::get('/mission', 'MissionController@view_data');
+
 
 Route::auth();

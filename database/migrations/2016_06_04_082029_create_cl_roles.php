@@ -15,6 +15,8 @@ class CreateClRoles extends Migration
         Schema::create('cl_roles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('role');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at')->nullable();
             $table->unsignedInteger('deleted_by')->nullable();
             $table->timestamp('date_deleted')->nullable();
             

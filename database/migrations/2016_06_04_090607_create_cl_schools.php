@@ -16,6 +16,8 @@ class CreateClSchools extends Migration
             $table->increments('id');
             $table->string('school_name');
             $table->string('school_address');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at')->nullable();
             $table->unsignedInteger('deleted_by')->nullable();
             $table->timestamp('date_deleted')->nullable();
 

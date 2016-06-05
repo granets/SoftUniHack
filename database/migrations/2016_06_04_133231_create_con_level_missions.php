@@ -16,6 +16,8 @@ class CreateConLevelMissions extends Migration
             $table->increments('id');
             $table->unsignedInteger('mission_id')->index();
             $table->unsignedInteger('level_id')->index();
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at')->nullable();
             $table->unsignedInteger('deleted_by')->nullable();
             $table->timestamp('date_deleted')->nullable();
 

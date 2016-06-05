@@ -15,6 +15,8 @@ class CreateClClassSubjects extends Migration
         Schema::create('cl_class_subjects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('subject_name');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at')->nullable();
             $table->unsignedInteger('deleted_by')->nullable();
             $table->timestamp('date_deleted')->nullable();
 

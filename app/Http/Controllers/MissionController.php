@@ -29,6 +29,8 @@ class MissionController extends Controller {
             'points' => 'required'
         ]);
 
+
+
         $mission = new CmMission;
         $mission->mission = $request->mission;
         $mission->points = $request->points;
@@ -37,4 +39,13 @@ class MissionController extends Controller {
 
         return redirect('/mission');
     }
+
+    public function view_data() {
+            $missions = CmMission::orderBy('created_at', 'asc')->get();
+
+            return view('mission.add_form', [
+                'missions' => $missions
+        ]);
+    }
+
 }

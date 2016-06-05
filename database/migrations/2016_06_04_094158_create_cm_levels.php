@@ -16,9 +16,9 @@ class CreateCmLevels extends Migration
             $table->increments('id');
             $table->unsignedInteger('level_number');
             $table->string('level_name');
-            $table->timestamp('date_created');
+            $table->timestamp('created_at');
             $table->unsignedInteger('created_by');
-            $table->timestamp('date_updated')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamp('date_deleted')->nullable();
             $table->unsignedInteger('deleted_by')->nullable();
