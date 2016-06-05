@@ -60,7 +60,7 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#about">Виж Чудовище</a>
+                    <a href="{{url('/monsters')}}">Виж Чудовище</a>
                 </li>
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
