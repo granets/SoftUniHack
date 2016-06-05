@@ -2,6 +2,6 @@
 
 @section('content')
 <div> 
-	test
+	id = {{$id}}
 </div>
 @endsection

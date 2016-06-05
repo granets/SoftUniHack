@@ -19,7 +19,9 @@
                         @foreach ($all_missions as $mission)
 						    
                             <form class="form-horizontal" role="form" method="POST" action="{{ url('/awarding') }}">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                                <input type="hidden" name="monster_id" value="{{$monster->id}}"/>
+                                <input type="hidden" name="mission_id" value="{{$mission->id}}"/>
                                 <div class="form-group{{ $errors->has('mission_points') ? ' has-error' : '' }}">
                                 <tr class="success">
                                     <td>{{ $mission->mission }} - {{$mission->points}} т.</td>
@@ -38,7 +40,9 @@
                             @endif
 						@endforeach
                     </table>
-                        Общо: {{$total_points}}
+                        <h4> Общо: {{$monster->total_points}} точки </h4>
+                        <img src='{{asset("img/$monster->picture")}}' class="img img-responsive" width="256" alt="{{$monster->name}}"/>
+                        
                         <table class="table table-striped table-bordered table-hover">
                             <tr>
                                 <th> Мисия</th>
