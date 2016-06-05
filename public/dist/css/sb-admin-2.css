@@ -13,6 +13,10 @@ body {
     width: 100%;
 }
 
+.text-right {
+    color: #fff;
+}
+
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
@@ -301,55 +305,73 @@ table.dataTable thead .sorting:after {
 }
 
 .panel-green {
-    border-color: #5cb85c;
+    border-color: #00b386;
 }
 
 .panel-green .panel-heading {
-    border-color: #5cb85c;
+    border-color: #00b386 !important;
     color: #fff;
-    background-color: #5cb85c;
+    background-color: #00b386 !important;
+}
+
+.panel-primary .panel-heading {
+    border-color: #00b386 !important;
+    color: #fff;
+    background-color: #00b386 !important;
+}
+
+.panel-primary {
+    border-color: #00b386 !important;
 }
 
 .panel-green a {
-    color: #5cb85c;
+    color: #00b386;
 }
 
 .panel-green a:hover {
-    color: #3d8b3d;
+    color: #008060;
 }
 
 .panel-red {
-    border-color: #d9534f;
+    border-color: #00b386;
 }
 
 .panel-red .panel-heading {
-    border-color: #d9534f;
+    border-color: #00b386 !important;
     color: #fff;
-    background-color: #d9534f;
+    background-color: #00b386 !important;
 }
 
 .panel-red a {
-    color: #d9534f;
+    color: #00b386;
 }
 
 .panel-red a:hover {
-    color: #b52b27;
+    color: #008060;
 }
 
 .panel-yellow {
-    border-color: #f0ad4e;
+    border-color: #00b386;
 }
 
 .panel-yellow .panel-heading {
-    border-color: #f0ad4e;
-    color: #fff;
-    background-color: #f0ad4e;
+    border-color: #00b386 !important;
+    color: #fff !;
+    background-color: #00b386 !important;
 }
 
 .panel-yellow a {
-    color: #f0ad4e;
+    color: #00b386;
 }
 
 .panel-yellow a:hover {
-    color: #df8a13;
+    color: #008060;
+}
+
+.panel-primary a {
+    color: #00b386;
+}
+
+.panel-primary a:hover {
+    color: #008060;
 }
