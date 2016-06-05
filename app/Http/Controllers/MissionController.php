@@ -15,6 +15,10 @@ class MissionController extends Controller {
      *
      * @return void
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
 
     public function show_form()
@@ -24,6 +28,9 @@ class MissionController extends Controller {
         return view('mission.add_form', [
             'missions' => $missions
         ]);
+
+
+
     }
 
     public function submit_form(Request $request)
@@ -40,6 +47,12 @@ class MissionController extends Controller {
         $mission->points = $request->points;
 
         $mission->save();
+
+        return redirect('/mission');
+    }
+
+    public function delete_data(CmMission $mission){
+        $mission->delete();
 
         return redirect('/mission');
     }
