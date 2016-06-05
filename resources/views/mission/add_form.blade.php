@@ -4,12 +4,11 @@
         <form class="form form-horizontal" role="form" method="POST" action="{{ url('/mission') }}">
         {{ csrf_field() }}
         <div class="form-group col-md-9 col-md-push-3">
-            <label>Задайте мисия</label>
-            <textarea class="form-control" name="mission" placeholder="Мисия"> </textarea>
             <div class="row">
                 <div class="form-group col-md-6 col-md-push-3">
                     <label>Здайте мисия</label>
                     <textarea class="form-control" name="mission" placeholder="Мисия"> </textarea>
+                </div>
                 </div>
         </div>
             <div class="row">
