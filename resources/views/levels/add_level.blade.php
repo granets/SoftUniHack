@@ -1,7 +1,7 @@
-@extends ('layouts.app')
+@extends ('layouts.master-admin')
 @section('content')
 
-    <form class="form-horizontal" role="form" method="POST" action="{{ url('/level') }}">
+    <form class="form form-horizontal" role="form" method="POST" action="{{ url('/level') }}">
         {{ csrf_field() }}
         <div class="form-group col-md-9 col-md-push-3">
             <label>Задайте ниво</label>
@@ -21,16 +21,22 @@
     @if (count($levels) > 0)
         <div  style="position:relative; top:100px;">
             <div style="position:relative; top:100px; text-align:center; font-weight:bold; font-size:2em;">
-                <p class="col-md-6 col-md-push-3">Зададени нива:</p>
+                <p class="col-md-6 col-md-push-3">Зададени мисии:</p>
             </div>
 
             <div class="panel-body col-md-9 col-md-push-3">
                 <table class="table table-striped table-bordered table-hover">
+                    <div class="container-fluid">
+                        <div>
+                            <p class="col-md-6 col-md-push-3"><b>Зададени мисии:</b></p>
+                        </div>
+
+                        <div class="panel-body col-md-8 col-md-push-3" style="padding: 0;">
+                            <table class="table table-striped table-bordered table-striped table-hover">
 
                     <!-- Table Headings -->
                     <thead>
                     <th>Номер</th>
-                    <th>Мисии</th>
                     <th>Нива</th>
                     <th>Изтрий</th>
                     </thead>
@@ -43,7 +49,6 @@
                             <td class="table-text">
                                 <div class="col-md-6">{{ $level->number }}</div>
                             </td>
-                            <td></td>
                             <td class="table-text">
                                 <div class="col-md-6">{{ $level->levels }}</div>
                             </td>
