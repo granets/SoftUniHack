@@ -69,7 +69,7 @@
                         <li><a href="{{ url('/register') }}">Регистрация</a></li>
                     @else
                         <li class="page-scroll">
-                            <a href="#">
+                            <a href="{{url('/admin')}}">
                                 {{ Auth::user()->name }}
                             </a>
                         </li>
