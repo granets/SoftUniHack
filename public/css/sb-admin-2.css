@@ -1,12 +1,5 @@
-/*!
- * Start Bootstrap - SB Admin 2 Bootstrap Admin Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 body {
-    background-color: #f8f8f8;
-    font-family: Roboto, 'sans-serif';
+    background-color: #ffffff;
 }
 
 #wrapper {
@@ -16,15 +9,15 @@ body {
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
-    background-color: #fff;
+    background-color: white;
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
     #page-wrapper {
         position: inherit;
         margin: 0 0 0 250px;
         padding: 0 30px;
-        border-left: 1px solid #e7e7e7;
+        border-left: 1px solid #eeeeee;
     }
 }
 
@@ -87,8 +80,8 @@ body {
 }
 
 .sidebar .sidebar-nav.navbar-collapse {
-    padding-right: 0;
     padding-left: 0;
+    padding-right: 0;
 }
 
 .sidebar .sidebar-search {
@@ -96,11 +89,11 @@ body {
 }
 
 .sidebar ul li {
-    border-bottom: 1px solid #e7e7e7;
+    border-bottom: 1px solid #eeeeee;
 }
 
 .sidebar ul li a.active {
-    background-color: #eee;
+    background-color: #eeeeee;
 }
 
 .sidebar .arrow {
@@ -111,13 +104,13 @@ body {
     content: "\f104";
 }
 
-.sidebar .active>a>.fa.arrow:before {
+.sidebar .active > a > .fa.arrow:before {
     content: "\f107";
 }
 
 .sidebar .nav-second-level li,
 .sidebar .nav-third-level li {
-    border-bottom: 0!important;
+    border-bottom: none !important;
 }
 
 .sidebar .nav-second-level li a {
@@ -128,7 +121,7 @@ body {
     padding-left: 52px;
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
     .sidebar {
         z-index: 1;
         position: absolute;
@@ -150,23 +143,23 @@ body {
 }
 
 .btn-primary.btn-outline {
-    color: #428bca;
+    color: #00b386;
 }
 
 .btn-success.btn-outline {
-    color: #5cb85c;
+    color: #ffa71a;
 }
 
 .btn-info.btn-outline {
-    color: #5bc0de;
+    color: #fff;
 }
 
 .btn-warning.btn-outline {
-    color: #f0ad4e;
+    color: #ffa71a;
 }
 
 .btn-danger.btn-outline {
-    color: #d9534f;
+    color: red;
 }
 
 .btn-primary.btn-outline:hover,
@@ -174,7 +167,7 @@ body {
 .btn-info.btn-outline:hover,
 .btn-warning.btn-outline:hover,
 .btn-danger.btn-outline:hover {
-    color: #fff;
+    color: white;
 }
 
 .chat {
@@ -186,7 +179,7 @@ body {
 .chat li {
     margin-bottom: 10px;
     padding-bottom: 5px;
-    border-bottom: 1px dotted #999;
+    border-bottom: 1px dotted #f2f2f2;
 }
 
 .chat li.left .chat-body {
@@ -225,17 +218,12 @@ body {
     height: 100%;
 }
 
-.dataTables_wrapper {
-    position: relative;
-    clear: both;
-}
-
 table.dataTable thead .sorting,
 table.dataTable thead .sorting_asc,
 table.dataTable thead .sorting_desc,
 table.dataTable thead .sorting_asc_disabled,
 table.dataTable thead .sorting_desc_disabled {
-    background: 0 0;
+    background: transparent;
 }
 
 table.dataTable thead .sorting_asc:after {
@@ -254,7 +242,7 @@ table.dataTable thead .sorting:after {
     content: "\f0dc";
     float: right;
     font-family: fontawesome;
-    color: rgba(50,50,50,.5);
+    color: rgba(50, 50, 50, 0.5);
 }
 
 .btn-circle {
@@ -285,11 +273,11 @@ table.dataTable thead .sorting:after {
     line-height: 1.33;
 }
 
-.show-grid [class^=col-] {
+.show-grid [class^="col-"] {
     padding-top: 10px;
     padding-bottom: 10px;
     border: 1px solid #ddd;
-    background-color: #eee!important;
+    background-color: #eee !important;
 }
 
 .show-grid {
@@ -301,55 +289,55 @@ table.dataTable thead .sorting:after {
 }
 
 .panel-green {
-    border-color: #5cb85c;
+    border-color: #ffa71a;
 }
 
 .panel-green .panel-heading {
-    border-color: #5cb85c;
-    color: #fff;
-    background-color: #5cb85c;
+    border-color: #ffa71a;
+    color: white;
+    background-color: #ffa71a;
 }
 
 .panel-green a {
-    color: #5cb85c;
+    color: #ffa71a;
 }
 
 .panel-green a:hover {
-    color: #3d8b3d;
+    color: #cd7e00;
 }
 
 .panel-red {
-    border-color: #d9534f;
+    border-color: red;
 }
 
 .panel-red .panel-heading {
-    border-color: #d9534f;
-    color: #fff;
-    background-color: #d9534f;
+    border-color: red;
+    color: white;
+    background-color: red;
 }
 
 .panel-red a {
-    color: #d9534f;
+    color: red;
 }
 
 .panel-red a:hover {
-    color: #b52b27;
+    color: #b30000;
 }
 
 .panel-yellow {
-    border-color: #f0ad4e;
+    border-color: #ffa71a;
 }
 
 .panel-yellow .panel-heading {
-    border-color: #f0ad4e;
-    color: #fff;
-    background-color: #f0ad4e;
+    border-color: #ffa71a;
+    color: white;
+    background-color: #ffa71a;
 }
 
 .panel-yellow a {
-    color: #f0ad4e;
+    color: #ffa71a;
 }
 
 .panel-yellow a:hover {
-    color: #df8a13;
+    color: #cd7e00;
 }
