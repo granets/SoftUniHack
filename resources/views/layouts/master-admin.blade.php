@@ -11,7 +11,7 @@
     <meta name="theme-color" content="#00b386">
     <link rel="icon" sizes="192x192" href="{{asset('img/blue-monster.png')}}">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Чудовища на Успеха - Админ Панел</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -91,7 +91,6 @@
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Нива</a>
-                        <!-- /.nav-second-level -->
                     </li>
                     <li>
                         <a href="{{url('/mission')}}"><i class="fa fa-road fa-fw"></i> Мисии</a>

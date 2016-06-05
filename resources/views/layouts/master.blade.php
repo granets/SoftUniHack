@@ -68,12 +68,13 @@
                         <li><a href="{{ url('/login') }}">Вход</a></li>
                         <li><a href="{{ url('/register') }}">Регистрация</a></li>
                     @else
-                        <li>
+                        <li class="page-scroll">
                             <a href="#">
                                 {{ Auth::user()->name }}
                             </a>
                         </li>
-                        <li><a href="{{ url('/logout') }}">Изход <i class="fa fa-btn fa-sign-out"></i></a></li>
+                        <li class="page-scroll"><a href="{{ url('/logout') }}">Изход <i
+                                        class="fa fa-btn fa-sign-out"></i></a></li>
                         </li>
                     @endif
                 </ul>
