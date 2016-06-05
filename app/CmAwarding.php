@@ -11,7 +11,12 @@ class CmAwarding extends Model
      *
      * @var array
     */
-    protected $fillable = ['monster_id', 'mission_id', 'day_achievement', 'achievement_comment'];
+    protected $fillable = [
+            'monster_id'
+            ,'mission_id'
+            ,'day_achievement'
+            ,'achievement_comment'
+        ];
 
     public function user()
     {
