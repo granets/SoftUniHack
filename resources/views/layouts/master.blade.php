@@ -60,7 +60,7 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#about">Виж Чудовище</a>
+                    <a href="{{url('/monsters')}}">Виж Чудовище</a>
                 </li>
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
@@ -68,12 +68,13 @@
                         <li><a href="{{ url('/login') }}">Вход</a></li>
                         <li><a href="{{ url('/register') }}">Регистрация</a></li>
                     @else
-                        <li>
-                            <a href="#">
+                        <li class="page-scroll">
+                            <a href="{{url('/admin')}}">
                                 {{ Auth::user()->name }}
                             </a>
                         </li>
-                        <li><a href="{{ url('/logout') }}">Изход <i class="fa fa-btn fa-sign-out"></i></a></li>
+                        <li class="page-scroll"><a href="{{ url('/logout') }}">Изход <i
+                                        class="fa fa-btn fa-sign-out"></i></a></li>
                         </li>
                     @endif
                 </ul>

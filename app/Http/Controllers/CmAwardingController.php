@@ -23,6 +23,16 @@ class CmAwardingController extends Controller
         $this->middleware('auth');
     }
 
+    public function show_monsters(Request $request)
+	{
+		$all_monsters = CmMonster::all();
+
+		return view('awarding.monsters_list', 
+	    	[
+	    		'all_monsters'=> $all_monsters
+	    	]);
+	}
+
     /**
 	 * Display a list of all of the user's task.
 	 *
@@ -34,6 +44,7 @@ class CmAwardingController extends Controller
 	    //$awarding = $request->user()->tasks()->get();
 	    //$all_missions = CmMission::all(); 
 	    $level_missions = CmMission::where('points', 100)->orderBy('points', 'asc')->get();
+	    $total_points = CmAwarding::where('monster_id', 1)->sum('day_achievement');
 
 	    $awardings = CmAwarding::where('monster_id', 1)->get();
 
@@ -41,6 +52,7 @@ class CmAwardingController extends Controller
 	    	[
 	    		'all_missions'=> $level_missions
 	    		,'all_awardings' => $awardings
+	    		,'total_points' => $total_points
 	    	]);
 	}
 
@@ -66,5 +78,10 @@ class CmAwardingController extends Controller
 	    $awarding->save();
 
 	    return redirect('/awarding');
+	}
+
+	public function test(Request $request)
+	{
+		return view('awarding.test');
 	}
 }

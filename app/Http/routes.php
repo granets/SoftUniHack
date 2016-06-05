@@ -36,6 +36,10 @@ Route::post('/level', 'LevelController@submit_form');
 
 Route::auth();
 
+Route::get('/monsters', 'CmAwardingController@show_monsters');
+
 Route::get('/awarding', 'CmAwardingController@show_form');
 
 Route::post('/awarding', 'CmAwardingController@submit_form');
+
+Route::get('/test', 'CmAwardingController@test');
