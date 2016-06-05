@@ -16,8 +16,6 @@ use Illuminate\Http\Request;
 
 Route::get('/', 'HomeController@index');
 
-Route::get('home', 'HomeController@index');
-
 Route::get('/home', 'HomeController@index');
 
 Route::get('/admin', 'AdminController@index');
@@ -38,8 +36,10 @@ Route::auth();
 
 Route::get('/monsters', 'CmAwardingController@show_monsters');
 
-Route::get('/awarding', 'CmAwardingController@show_form');
+Route::get("/awarding", 'CmAwardingController@show_monsters');
 
-Route::post('/awarding', 'CmAwardingController@submit_form');
+Route::get("/awarding/{id}", 'CmAwardingController@show_form');
 
-Route::get('/test', 'CmAwardingController@test');
+Route::post("/awarding", 'CmAwardingController@submit_form');
+
+Route::get('/test', 'CmAwardingController@show_form');

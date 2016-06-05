@@ -16,6 +16,7 @@ class CreateCmMonsters extends Migration
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('level');
+            $table->unsignedInteger('total_points');
             $table->unsignedInteger('picture_id');
             $table->string('picture');
             $table->string('code');

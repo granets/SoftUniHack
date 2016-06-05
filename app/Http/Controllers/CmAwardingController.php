@@ -37,22 +37,22 @@ class CmAwardingController extends Controller
 	 * Display a list of all of the user's task.
 	 *
 	 * @param  Request  $request
+	 * @param  int  $id
 	 * @return Response
 	*/
-	public function show_form(Request $request)
+	public function show_form(Request $request, $id)
 	{
-	    //$awarding = $request->user()->tasks()->get();
-	    //$all_missions = CmMission::all(); 
 	    $level_missions = CmMission::where('points', 100)->orderBy('points', 'asc')->get();
-	    $total_points = CmAwarding::where('monster_id', 1)->sum('day_achievement');
+	    $total_points = CmAwarding::where('monster_id', $id)->sum('day_achievement');
+	    $monster = CmMonster::where('id', $id)->first();
 
-	    $awardings = CmAwarding::where('monster_id', 1)->get();
+	    $awardings = CmAwarding::where('monster_id', $id)->get();
 
 	    return view('awarding.add_form', 
 	    	[
 	    		'all_missions'=> $level_missions
 	    		,'all_awardings' => $awardings
-	    		,'total_points' => $total_points
+	    		,'monster' => $monster
 	    	]);
 	}
 
@@ -70,18 +70,30 @@ class CmAwardingController extends Controller
 
 	    $awarding = new CmAwarding();
 
-	    $awarding->monster_id = 1;
-	    $awarding->mission_id = 1;
+	    $monster_id = $request->monster_id;
+	    $mission_id = $request->mission_id;
+
+	    $awarding->monster_id = $monster_id;
+	    $awarding->mission_id = $mission_id;
 	    $awarding->day_achievement = $request->mission_points;
 	    $awarding->achievement_comment = $request->achievement_comment;
 
 	    $awarding->save();
+	    $total_points = CmAwarding::where('monster_id', $monster_id)->sum('day_achievement');
 
-	    return redirect('/awarding');
+	    // $monster = CmMonster::where('id', 1)->get();
+	    // $total_points = CmAwarding::where('monster_id', 1)->sum('day_achievement');
+	    // $monster->total_points = $total_points;
+	    // $monster->save();
+
+	    CmMonster::where('id', $monster_id)
+          ->update(['total_points' => $total_points]);
+
+	    return redirect('/monsters');
 	}
 
-	public function test(Request $request)
+	public function test(Request $request, $id)
 	{
-		return view('awarding.test');
+		return view('awarding.test', ['id'=>$id]);
 	}
 }

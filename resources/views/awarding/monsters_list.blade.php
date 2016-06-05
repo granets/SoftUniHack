@@ -12,17 +12,18 @@
                             <th> Чудовище</th>
                             <th> Картинка</th>
                             <th> Клас</th>
+                            <th> Ниво</th>
                             <th> Общо точки</th>
                             <th> </th>
                         </tr>
                         @foreach ($all_monsters as $monster)
-						    
                            <tr>
                                     <td>{{ $monster->name }}</td>
-                                    <td><img src="{{asset('img/monster1.jpg')}}" class="img img-responsive" width="128" alt="{{ $monster->name }}"/></td>
+                                    <td><img src='{{asset("img/$monster->picture")}}' class="img img-responsive" width="128" alt="{{ $monster->name }}"/></td>
                                     <td>2 Б</td>
-                                    <td> 165 т </td>
-                                    <td><a href="{{url('/awarding')}}"> Подробности</a></td>
+                                    <td> {{$monster->level}}</td>
+                                    <td> {{$monster->total_points}} т</td>
+                                    <td><a href='{{url("/awarding/$monster->id")}}'> Подробности</a></td>
                             </tr>
                         @endforeach
                     </table>
