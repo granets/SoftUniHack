@@ -91,7 +91,6 @@
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Нива</a>
-                        <!-- /.nav-second-level -->
                     </li>
                     <li>
                         <a href="{{url('/mission')}}"><i class="fa fa-road fa-fw"></i> Мисии</a>
