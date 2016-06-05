@@ -23,7 +23,7 @@ class CmAwarding extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function cm_mission()
+    public function cmMission()
     {
         return $this->belongsTo(CmMission::class);
     }

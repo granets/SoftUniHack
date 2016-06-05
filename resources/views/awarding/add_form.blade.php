@@ -9,29 +9,35 @@
                 <div class="panel-body">
                     
                         
-
+                    <table class="table table-striped table-bordered table-hover">
+                        <tr>
+                            <th> Мисия</th>
+                            <th> Точки</th>
+                            <th> Коментар</th>
+                            <th> </th>
+                        </tr>
                         @foreach ($all_missions as $mission)
 						    
                             <form class="form-horizontal" role="form" method="POST" action="{{ url('/awarding') }}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-group{{ $errors->has('mission_points') ? ' has-error' : '' }}">
-                                    <label for="mission_points" class="col-md-4 control-label">{{ $mission->mission }} - {{$mission->points}} т.</label>
-
-                                    <div class="col-md-5">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input id="mission" type="text" class="form-control" name="mission_points" value="{{ old('mission_points') }}">
+                                <tr class="success">
+                                    <td>{{ $mission->mission }} - {{$mission->points}} т.</td>
+                                    <td><input id="mission" type="text" class="form-control" name="mission_points" value="{{ old('mission_points') }}"> </td>
+                                    <td> 
                                         <textarea id="comment" name="achievement_comment" class="col-md-12">
-
                                         </textarea>
-                                        <input id="save_mission" type="submit" class="form-control btn btn-primary" name="save" value="Добави точки"/>
-                                        @if ($errors->has('mission_points'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('mission_points') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
+                                    </td>
+                                    <td><input id="save_mission" type="submit" class="form-control btn btn-primary" name="save" value="Добави точки"/> </td>
+                                </tr>
                             </form>
+                            @if ($errors->has('mission_points'))
+                                <span class="help-block">
+                                   <strong>{{ $errors->first('mission_points') }}</strong>
+                                </span>
+                            @endif
 						@endforeach
+                    </table>
 
                         <table class="table table-striped table-bordered table-hover">
                         <tr>
