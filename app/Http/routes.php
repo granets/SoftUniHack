@@ -34,7 +34,11 @@ Route::post('/level', 'LevelController@submit_form');
 
 Route::auth();
 
-Route::get('/monsters', 'CmAwardingController@show_monsters');
+Route::get('/monsters', 'MonsterController@show_form');
+
+Route::post('/monsters', 'MonsterController@submit_form');
+
+Route::delete('/monsters/{monster}', 'MonsterController@delete_data');
 
 Route::get("/awarding", 'CmAwardingController@show_monsters');
 
