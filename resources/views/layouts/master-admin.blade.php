@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="theme-color" content="#00b386">
+    <link rel="icon" sizes="192x192" href="{{asset('img/blue-monster.png')}}">
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
