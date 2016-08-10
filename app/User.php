@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role'
     ];
 
     /**
@@ -57,4 +57,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(ConAccountMonster::class);
     }
+
+    public function cm_class()
+    {
+        return $this->hasMany(CmClass::class, 'cm_lead_teacher_id');
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(ClRole::class, 'role');
+    }    
 }

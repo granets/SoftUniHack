@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Auth;
 use App\CmMonster;
+use App\CmClass;
+use App\ConUsersClasses;
 use App\Http\Controllers\Controller;
 
 class MonsterController extends Controller {
@@ -58,10 +61,43 @@ class MonsterController extends Controller {
         return redirect('/monsters');
     }
 
-    public function delete_data(CmMonster $monster){
+    public function delete_data(CmMonster $monster)
+    {
         $monster->delete();
 
         return redirect('/monsters');
     }
 
+    public function input_code_form()
+    {
+        return view('monster.code_form');
+    }
+
+    public function check_code(Request $request)
+    {
+        $cm_class = CmClass::where('class_code', $request->code)->first();
+        
+        return view('monster.approve_code',
+            [
+                'cm_class' => $cm_class
+            ]);
+    }
+
+    public function add_code(Request $request)
+    {
+        $id = Auth::id();
+
+        $con_user_class = new ConUsersClasses;
+        $con_user_class->cm_class_id = $request->class_id;
+        $con_user_class->user_id = $id;
+
+        $con_user_class->save();
+
+        return redirect('/monsters');
+    }
+
+    public function user_monsters()
+    {
+        
+    }
 }

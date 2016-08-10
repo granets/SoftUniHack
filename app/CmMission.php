@@ -12,8 +12,6 @@ class CmMission extends Model
      * @var array
     */
 
-
-
     protected $fillable = ['mission', 'points'];
 
     public function user()

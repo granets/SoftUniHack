@@ -417,6 +417,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      */
     public function login(AuthenticatableContract $user, $remember = false)
     {
+        $this->session->put('role', $user->role);
         $this->updateSession($user->getAuthIdentifier());
 
         // If the user should be permanently "remembered" by the application we will
@@ -424,7 +425,6 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
         // identifier. We will then decrypt this later to retrieve the users.
         if ($remember) {
             $this->createRememberTokenIfDoesntExist($user);
-
             $this->queueRecallerCookie($user);
         }
 

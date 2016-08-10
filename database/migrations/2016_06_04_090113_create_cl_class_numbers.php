@@ -13,7 +13,6 @@ class CreateClClassNumbers extends Migration
     public function up()
     {
         Schema::create('cl_class_numbers', function (Blueprint $table) {
-            $table->increments('id');
             $table->unsignedInteger('class_number')->index();
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();

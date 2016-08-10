@@ -20,4 +20,9 @@ class ClSchool extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function cm_class()
+    {
+        return $this->hasMany(CmClass::class, 'school_id');
+    }
 }

@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClSchoolYear extends Model
 {
+    protected $primaryKey = 'school_year';
+    public $incrementing = false;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -19,5 +22,10 @@ class ClSchoolYear extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function cm_class()
+    {
+        return $this->belongsTo(CmClass::class);
     }
 }

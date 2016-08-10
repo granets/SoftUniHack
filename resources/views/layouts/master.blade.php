@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +9,7 @@
     <meta name="theme-color" content="#00b386">
     <link rel="icon" sizes="192x192" href="{{asset('img/blue-monster.png')}}">
 
-    <title>Чудовища на Успеха</title>
+    <title>{{trans('master_layout.title_tag')}}</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -50,7 +48,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Чудовища на Успеха</a>
+            <a class="navbar-brand" href="#page-top">{{trans('master_layout.title_h1')}}</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,25 +58,48 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll">
-                    <a href="{{url('/monsters')}}">Виж Чудовище</a>
+                    <a href="{{url('/all-monsters')}}">{{trans('master_layout.see_monster')}}</a>
                 </li>
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Вход</a></li>
-                        <li><a href="{{ url('/register') }}">Регистрация</a></li>
+                        <li><a href="{{ url('/login') }}">{{trans('master_layout.login')}}</a></li>
+                        <li><a href="{{ url('/register') }}">{{trans('master_layout.registration')}}</a></li>
                     @else
                         <li class="page-scroll">
                             <a href="{{url('/admin')}}">
                                 {{ Auth::user()->name }}
                             </a>
                         </li>
-                        <li class="page-scroll"><a href="{{ url('/logout') }}">Изход <i
+                        <li class="page-scroll"><a href="{{ url('/logout') }}">{{trans('master_layout.logout')}} <i
                                         class="fa fa-btn fa-sign-out"></i></a></li>
                         </li>
                     @endif
                 </ul>
             </ul>
+
+            <!-- Switch Langueges -->
+                 <span class="pull-right">
+                     <form class="form" role="form" method="POST" action="{{ url('/postChangeLanguage') }}">
+                        {{ csrf_field() }}
+                            <div class="form-group col-md-3">
+                                <label>{{trans('main_layout.lang')}}</label>
+                                <?php
+                                    if (Session::has('language')) {
+                                        $language = Session::get('language');
+                                    }else{
+                                        $language = Config::get('app.locale');
+                                    }
+                                ?>
+                                <select name="lang" onchange="this.form.submit()">
+                                    <option value="bg" <?php echo ($language==='bg' ? 'selected' : '');?>> bg </option>
+                                    <option value="en" <?php echo ($language==='en' ? 'selected' : '');?>> en </option>
+                                </select>
+                            </div>
+                     </form>
+                 </span>
+                 <!-- /.switch languages -->
+                 
         </div>
         <!-- /.navbar-collapse -->
     </div>

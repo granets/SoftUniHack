@@ -13,10 +13,10 @@ class CreateClSchoolYears extends Migration
     public function up()
     {
         Schema::create('cl_school_years', function (Blueprint $table) {
-            $table->increments('id');
+            $table->string('school_year');
             $table->unsignedInteger('start_year');
             $table->unsignedInteger('end_year');
-            $table->string('school_year');
+
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
             $table->unsignedInteger('deleted_by')->nullable();

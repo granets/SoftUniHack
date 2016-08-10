@@ -99,12 +99,12 @@ class CmAwardingController extends Controller
 	    }
 	    CmMonster::where('id', $monster_id)
           ->update([
-          	'total_points' => $total_points
+          	'points' => $total_points
           	,'level' => $new_level
           	,'picture' => $new_picture
           	]);
 
-	    return redirect('/monsters');
+	    return redirect('/awarding');
 	}
 
 	public function test(Request $request, $id)
