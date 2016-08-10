@@ -5,19 +5,24 @@
         {{ csrf_field() }}
             <div class="row">
                 <div class="form-group col-md-6 col-md-push-3">
-                    <label>Здайте мисия</label>
-                    <textarea class="form-control" name="mission" placeholder="Мисия"> </textarea>
+                    <label>{{trans('missions.form_mission')}}</label>
+                    <textarea class="form-control" name="mission" placeholder="">{{ e(old('mission'))}} </textarea>
+                    <?php if($errors->has('mission')): ?>
+                        <span class="help-block">
+                            <strong><?php echo e($errors->first('mission')); ?></strong>
+                        </span>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6 col-md-push-3">
-                    <label>Задайте точки</label>
-                    <input type="number" class="form-control" name="points" placeholder="Точки">
+                    <label>{{trans('missions.form_points')}}</label>
+                    <input type="number" class="form-control" name="points" placeholder="{{trans('missions.form_points')}}">
                 </div>
         </div>
         <div class="form-group input-group">
         <span class="input-group-btn">
-            <button class="btn btn-primary" name="missionenter" type="submit" style="border-radius: 3px;">Добави мисия
+            <button class="btn btn-primary" name="missionenter" type="submit" style="border-radius: 3px;">{{trans('missions.form_submit')}}
             </button>
         </span>
         </div>
@@ -26,7 +31,7 @@
     @if (count($missions) > 0)
         <div class="container-fluid">
             <div>
-                <p class="col-md-6 col-md-push-3"><b>Зададени мисии:</b></p>
+                <p class="col-md-6 col-md-push-3"><b>{{trans('missions.missions_list')}}</b></p>
             </div>
 
             <div class="panel-body col-md-8 col-md-push-3" style="padding: 0;">
@@ -34,9 +39,9 @@
 
                     <!-- Table Headings -->
                     <thead>
-                    <th>Мисия</th>
-                    <th>Точки</th>
-                    <th>Изтрий</th>
+                    <th>{{trans('missions.table_mission')}}</th>
+                    <th>{{trans('missions.table_points')}}</th>
+                    <th>{{trans('missions.table_delete')}}</th>
                     </thead>
 
                     <!-- Table Body -->
@@ -48,7 +53,7 @@
                                 <div>{{ $mission->mission }}</div>
                             </td>
                             <td class="">
-                                <div>{{ $mission->points }} точки</div>
+                                <div>{{ $mission->points }} {{trans('missions.td_pts')}}</div>
                             </td>
 
                             <td width="10%;">
@@ -57,7 +62,7 @@
                                     {{ method_field('DELETE') }}
 
                                     <button type="submit" class="btn btn-danger">
-                                        <i class="fa fa-trash"></i> Изтрий
+                                        <i class="fa fa-trash"></i> {{trans('missions.td_delete')}}
                                     </button>
                                     <input type="hidden" name="_method" value="DELETE">
                                 </form>

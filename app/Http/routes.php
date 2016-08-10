@@ -34,16 +34,32 @@ Route::post('/level', 'LevelController@submit_form');
 
 Route::auth();
 
-Route::get('/monsters', 'MonsterController@show_form');
+Route::get('/all-monsters', 'MonsterController@show_form');
+
+Route::get('/monsters', 'MonsterController@user_monsters');
 
 Route::post('/monsters', 'MonsterController@submit_form');
 
 Route::delete('/monsters/{monster}', 'MonsterController@delete_data');
 
-Route::get("/awarding", 'CmAwardingController@show_monsters');
+Route::get("/awarding/", 'CmAwardingController@show_monsters');
 
 Route::get("/awarding/{id}", 'CmAwardingController@show_form');
 
 Route::post("/awarding", 'CmAwardingController@submit_form');
 
-Route::get('/test', 'CmAwardingController@show_form');
+Route::post('/postChangeLanguage', 'CommonController@postChangeLanguage');
+
+Route::get('/test', 'CommonController@show_form');
+
+Route::get('/classes', 'CmClassController@show_form');
+
+Route::post('/classes', 'CmClassController@submit_form');
+
+Route::delete('/classes/{id}', 'CmClassController@delete_data');
+
+Route::get('/user-code', 'MonsterController@input_code_form');
+
+Route::post('/user-code', 'MonsterController@check_code');
+
+Route::post('/add-code', 'MonsterController@add_code');

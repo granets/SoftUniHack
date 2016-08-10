@@ -3,6 +3,7 @@
 namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Http\Request;
+use App\ClRole;
 use Illuminate\Support\Facades\Auth;
 
 trait RegistersUsers
@@ -26,11 +27,16 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
+        $all_roles = ClRole::all();
+
         if (property_exists($this, 'registerView')) {
             return view($this->registerView);
         }
 
-        return view('auth.register');
+        return view('auth.register',
+            [
+                'all_roles' => $all_roles
+            ]);
     }
 
     /**

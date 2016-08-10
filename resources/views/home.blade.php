@@ -8,9 +8,9 @@
                     <img class="img-responsive" src="{{ asset('img/blue-monster.png') }}" alt="" width="256px">
 
                     <div class="intro-text">
-                        <span class="name">Чудовища на Успеха</span>
+                        <span class="name">{{trans('home.title_h1')}}</span>
                         <hr class="star-light">
-                        <span class="skills">Забавлявай се - Учи - Печели</span>
+                        <span class="skills">{{trans('home.main_title')}}</span>
                     </div>
                 </div>
             </div>
@@ -211,7 +211,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        &copy; Чудовищен Успех 2016
+                        &copy; {{trans('home.footer_copyright')}}
                     </div>
                 </div>
             </div>

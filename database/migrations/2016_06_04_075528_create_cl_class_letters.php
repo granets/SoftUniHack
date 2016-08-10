@@ -13,7 +13,6 @@ class CreateClClassLetters extends Migration
     public function up()
     {
         Schema::create('cl_class_letters', function (Blueprint $table) {
-            $table->increments('id');
             $table->char('letter');
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();

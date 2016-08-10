@@ -4,15 +4,15 @@
     <form class="form form-horizontal" role="form" method="POST" action="{{ url('/level') }}">
         {{ csrf_field() }}
         <div class="form-group col-md-9 col-md-push-3">
-            <label>Задайте ниво</label>
-            <p>Номер:</p>
+            <label>{{trans('levels.levels_title')}}</label>
+            <p>{{trans('levels.number')}}</p>
             <input type="text" name="number" placeholder="Номер" class="form-control">
-            <p>Ниво:</p>
-            <textarea class="form-control" name="levels" placeholder="Ниво"> </textarea>
+            <p>{{trans('levels.level')}}</p>
+            <textarea class="form-control" name="levels" placeholder="{{trans('levels.level')}}"> </textarea>
         </div>
         <div class="form-group input-group">
         <span class="input-group-btn">
-            <button class="btn btn-primary" name="levelenter" type="submit" style="border-radius: 3px; position:relative; top:190px;">Добави ниво
+            <button class="btn btn-primary" name="levelenter" type="submit" style="border-radius: 3px; position:relative; top:190px;">{{trans('levels.add_level')}}
             </button>
         </span>
         </div>
@@ -24,7 +24,7 @@
                 <table class="table table-striped table-bordered table-hover">
                     <div class="container-fluid">
                         <div>
-                            <p class="col-md-6 col-md-push-3"><b>Зададени мисии:</b></p>
+                            <p class="col-md-6 col-md-push-3"><b>{{trans('levels.table_title')}}</b></p>
                         </div>
 
                         <div class="panel-body col-md-8 col-md-push-3" style="padding: 0;">
@@ -32,9 +32,9 @@
 
                     <!-- Table Headings -->
                     <thead>
-                    <th>Номер</th>
-                    <th>Нива</th>
-                    <th>Изтрий</th>
+                    <th>{{trans('levels.table_number')}}</th>
+                    <th>{{trans('levels.table_levels')}}</th>
+                    <th>{{trans('levels.table_delete')}}</th>
                     </thead>
 
                     <!-- Table Body -->
@@ -55,7 +55,7 @@
                                     {{ method_field('DELETE') }}
 
                                     <button type="submit" class="btn btn-danger">
-                                        <i class="fa fa-trash"></i> Изтрий
+                                        <i class="fa fa-trash"></i> {{trans('levels.td_delete')}}
                                     </button>
                                     <input type="hidden" name="_method" value="DELETE">
                                 </form>

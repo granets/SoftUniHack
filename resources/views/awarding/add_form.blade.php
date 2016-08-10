@@ -40,7 +40,7 @@
                             @endif
 						@endforeach
                     </table>
-                        <h4> Общо: {{$monster->total_points}} точки </h4>
+                        <h4> Общо: {{$monster->points}} точки </h4>
                         <img src='{{asset("img/$monster->picture")}}' class="img img-responsive" width="256" alt="{{$monster->name}}"/>
                         
                         <table class="table table-striped table-bordered table-hover">
